@@ -9,8 +9,8 @@ import java.util.*;
 
 public class LimitOrderBookImpl implements IOrderBook {
 
-    private static final String BUY= "buy";
-    private static final String SELL= "sell";
+    public static final String BUY= "buy";
+    public static final String SELL= "sell";
 
     private final Map<BigDecimal, LinkedHashMap<Long, Order>> buyOrders = new TreeMap<>();
     private final Map<BigDecimal, LinkedHashMap<Long, Order>> sellOrders = new TreeMap<>();

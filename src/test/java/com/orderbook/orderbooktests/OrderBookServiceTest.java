@@ -2,10 +2,7 @@ package com.orderbook.orderbooktests;
 
 import com.orderbook.dao.Order;
 import com.orderbook.service.LimitOrderBookImpl;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,8 +15,10 @@ import java.util.*;
 public class OrderBookServiceTest {
 
 
-    LimitOrderBookImpl orderService = new LimitOrderBookImpl();
+    private LimitOrderBookImpl orderService = new LimitOrderBookImpl();
     private static List<Order> orders = new ArrayList<>();
+    private static List<Integer> newQuantities = new ArrayList<>();
+
 
 
 
@@ -60,8 +59,14 @@ public class OrderBookServiceTest {
 
         for(Order order : orders){
             Order expectedOrder = order;
-            Map<BigDecimal, LinkedHashMap<Long, Order>> actualPriceLevelOrders = orderService.getAllSellOrdersByPriceLevel();
 
+            Map<BigDecimal, LinkedHashMap<Long, Order>> actualPriceLevelOrders = null;
+
+            if(expectedOrder.getSide().equalsIgnoreCase(LimitOrderBookImpl.BUY)){
+                actualPriceLevelOrders = orderService.getAllBuyOrdersByPriceLevel();
+            }else{
+                actualPriceLevelOrders = orderService.getAllSellOrdersByPriceLevel();
+            }
             //Check the Price Level exists
             Assertions.assertTrue(actualPriceLevelOrders.containsKey(expectedOrder.getPrice()));
         }
@@ -94,7 +99,12 @@ public class OrderBookServiceTest {
     public void addOrdersTest_OrderAddedToPriceLevelOrderList(){
         for(Order order : orders){
             Order expectedOrder = order;
-            Map<BigDecimal, LinkedHashMap<Long, Order>> actualPriceLevelOrders = orderService.getAllSellOrdersByPriceLevel();
+            Map<BigDecimal, LinkedHashMap<Long, Order>> actualPriceLevelOrders = null;
+                if(expectedOrder.getSide().equalsIgnoreCase(LimitOrderBookImpl.BUY)){
+                    actualPriceLevelOrders = orderService.getAllBuyOrdersByPriceLevel();
+                }else{
+                    actualPriceLevelOrders = orderService.getAllSellOrdersByPriceLevel();
+                }
             LinkedHashMap<Long, Order> actualOrders = actualPriceLevelOrders.get(expectedOrder.getPrice());
             Order actualOrder =  actualOrders.get(expectedOrder.getId());
 
@@ -104,6 +114,68 @@ public class OrderBookServiceTest {
             Assertions.assertEquals(expectedOrder.getQuantity(), actualOrder.getQuantity());
             Assertions.assertEquals(expectedOrder.getSide(), actualOrder.getSide());
             Assertions.assertEquals(expectedOrder.getCreateDate(), actualOrder.getCreateDate());
+        }
+    }
+
+
+    @Test
+    public void modifyOrdersTest_orderIsModifiedOrderLookup(){
+
+
+        for(int i =0; i< getListSizeforUpdateTest(); i++){
+
+            Order expectedOrder = orders.get(i);
+            Order modifiedOrder = null;
+
+            try {
+                modifiedOrder = orderService.modifyOrder(expectedOrder.getId(),newQuantities.get(i));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            //Assertions.assertNotEquals(expectedOrder.getQuantity(), modifiedOrder.getQuantity());
+            Assertions.assertEquals(modifiedOrder.getQuantity(), newQuantities.get(i));
+
+            Assertions.assertEquals(orderService.getAllOrders().get(expectedOrder.getId()).getQuantity(), newQuantities.get(i));
+
+
+        }
+
+    }
+
+    @Test
+    public void modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority(){
+        for(int i =0; i< getListSizeforUpdateTest(); i++){
+
+            Order expectedOrder = orders.get(i);
+
+            try {
+               orderService.modifyOrder(expectedOrder.getId(),newQuantities.get(i));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            LinkedHashMap<Long, Order> actualModifiedOrders;
+
+            if(expectedOrder.getSide().equalsIgnoreCase(LimitOrderBookImpl.BUY)){
+                actualModifiedOrders = orderService.getAllBuyOrdersByPriceLevel().get(expectedOrder.getPrice());
+            }else{
+                actualModifiedOrders = orderService.getAllSellOrdersByPriceLevel().get(expectedOrder.getPrice());
+            }
+
+            Iterator iter = actualModifiedOrders.keySet().iterator();
+
+            Order actualTailOrder = new Order();
+
+            while(iter.hasNext()){
+                actualTailOrder = actualModifiedOrders.get(iter.next());
+
+            }
+
+            Assertions.assertEquals(expectedOrder.getId(), actualTailOrder.getId());
+            Assertions.assertEquals(expectedOrder.getPrice(), actualTailOrder.getPrice());
+            Assertions.assertEquals(newQuantities.get(i), actualTailOrder.getQuantity());
+            Assertions.assertEquals(expectedOrder.getSide(), actualTailOrder.getSide());
+            Assertions.assertEquals(expectedOrder.getCreateDate(), actualTailOrder.getCreateDate());
         }
     }
 
@@ -127,7 +199,11 @@ public class OrderBookServiceTest {
 
     @Test
     public void deleteOrdersTest_isOrderDeletedFromOrderLookup(){
+
+
         for(Order expectedOrder : orders){
+
+            orderService.deleteOrder(expectedOrder.getId());
             Assertions.assertFalse(orderService.getAllOrders().containsKey(expectedOrder.getId()));
         }
     }
@@ -135,11 +211,19 @@ public class OrderBookServiceTest {
     @Test
     public void deleteOrdersTest_isOrderDeletedFromOrderPriceLookup(){
         for(Order expectedOrder : orders){
-            Map<BigDecimal, LinkedHashMap<Long, Order>> actualOrders = orderService.getAllSellOrdersByPriceLevel();
-            LinkedHashMap<Long, Order> actualPriceLevelOrders = actualOrders.get(expectedOrder.getPrice());
+            orderService.deleteOrder(expectedOrder.getId());
+            Map<BigDecimal, LinkedHashMap<Long, Order>> actualPriceLevelOrders = orderService.getAllSellOrdersByPriceLevel();
+
+            if(expectedOrder.getSide().equalsIgnoreCase(LimitOrderBookImpl.BUY)){
+                actualPriceLevelOrders = orderService.getAllBuyOrdersByPriceLevel();
+            }else{
+                actualPriceLevelOrders = orderService.getAllSellOrdersByPriceLevel();
+            }
+
+            LinkedHashMap<Long, Order> actualOrders = actualPriceLevelOrders.get(expectedOrder.getPrice());
 
             //Check that the order has been deleted from the price order level map
-            Assertions.assertFalse(actualPriceLevelOrders.containsKey(expectedOrder.getId()));
+            Assertions.assertFalse(actualOrders.containsKey(expectedOrder.getId()));
 
         }
     }
@@ -153,52 +237,15 @@ public class OrderBookServiceTest {
 
 
 
-    @Test
-    public void modifyOrdersTest(){
-
-
-        Order expectedOrder = getMockedOrderObject();
-        orderService.addOrder(expectedOrder);
-
-        Order modifiedOrder = null;
-
-        try {
-            modifiedOrder = orderService.modifyOrder(expectedOrder.getId(),20);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        //Assertions.assertNotEquals(expectedOrder.getQuantity(), modifiedOrder.getQuantity());
-        Assertions.assertEquals(modifiedOrder.getQuantity(), 20);
-
-        Assertions.assertEquals(orderService.getAllOrders().get(expectedOrder.getId()).getQuantity(), 20 );
-
-        LinkedHashMap<Long, Order> expectedModifiedOrders = orderService.getAllSellOrdersByPriceLevel().get(expectedOrder.getPrice());
-
-        Iterator iter = expectedModifiedOrders.keySet().iterator();
-
-        Order actualTailOrder = new Order();
-
-        while(iter.hasNext()){
-            actualTailOrder = expectedModifiedOrders.get(iter.next());
-
-        }
-
-        Assertions.assertEquals(expectedOrder.getId(), actualTailOrder.getId());
-        Assertions.assertEquals(expectedOrder.getPrice(), actualTailOrder.getPrice());
-        Assertions.assertEquals(20, actualTailOrder.getQuantity());
-        Assertions.assertEquals(expectedOrder.getSide(), actualTailOrder.getSide());
-        Assertions.assertEquals(expectedOrder.getCreateDate(), actualTailOrder.getCreateDate());
-
-    }
 
     @BeforeAll
     public static void mockNewOrders(){
-        String file ="src/test/resources/mock_new_orders.txt";
+        String newOrdersfile ="src/test/resources/mock_new_orders.txt";
+        String updateOrderQuantityFile = "src/test/resources/update_orders_quantities.txt";
 
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new FileReader(newOrdersfile));
             String currentLine = null;
 
             while((currentLine = reader.readLine()) != null){
@@ -209,6 +256,13 @@ public class OrderBookServiceTest {
                         .setSide(parts[2])
                         .build());
             }
+
+            reader = new BufferedReader(new FileReader(updateOrderQuantityFile));
+
+            while((currentLine = reader.readLine()) != null){
+                newQuantities.add(Integer.parseInt(currentLine));
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -224,14 +278,31 @@ public class OrderBookServiceTest {
 
     /*@BeforeAll
     public static void printMockedOrders(){
-        orders.forEach((order) -> System.out.println(order.toString()));
+        //orders.forEach((order) -> System.out.println(order.toString()));
+        newQuantities.forEach((q) -> System.out.println(q));
     }*/
 
-    @BeforeAll
+    @BeforeEach
     public  void addMockedOrders(){
+        if(!orderService.getAllOrders().isEmpty()){
+            for(Order order : orders){
+                orderService.deleteOrder(order.getId());
+            }
+        }
         for(Order order : orders){
             orderService.addOrder(order);
+
         }
+    }
+
+    public static int getListSizeforUpdateTest(){
+        int length;
+        if(orders.size() < newQuantities.size()){
+            length = orders.size();
+        }else{
+            length = newQuantities.size();
+        }
+        return length;
     }
 
 
