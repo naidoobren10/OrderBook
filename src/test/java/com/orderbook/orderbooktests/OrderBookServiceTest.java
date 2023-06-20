@@ -9,7 +9,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class OrderBookServiceTest {
@@ -323,6 +322,11 @@ public class OrderBookServiceTest {
                 mockedOrdersByPriceLevel.put(order.getId(), order);
             }
         }
+    }
+
+    @AfterEach
+    public void clearMapWithOrdersByPriority(){
+        mockedOrdersByPriceLevel.clear();
     }
 
 
