@@ -15,6 +15,6 @@ public interface IOrderBook {
 
     public Order modifyOrder(long orderID, int quantity) throws Exception;
 
-    public void retriveOrders(BigDecimal orderPrice, String side);
+    public Map<Long, Order> retriveBuySellOrdersByPriceLevel(BigDecimal orderPrice, String side);
 
 }

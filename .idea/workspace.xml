@@ -22,23 +22,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/orderbook/service/IOrderBook.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/orderbook/service/LimitOrderBookImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="-401">
+              <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#3374#3375#0" expanded="true" />
                 <element signature="e#3406#3407#0" expanded="true" />
                 <element signature="e#3495#3496#0" expanded="true" />
@@ -56,82 +45,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/orderbook/dao/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#211#212#0" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
-                <element signature="e#270#271#0" expanded="true" />
-                <element signature="e#298#299#0" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
-                <element signature="e#442#443#0" expanded="true" />
-                <element signature="e#474#475#0" expanded="true" />
-                <element signature="e#505#506#0" expanded="true" />
-                <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#621#622#0" expanded="true" />
-                <element signature="e#648#649#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#873#874#0" expanded="true" />
-                <element signature="e#906#907#0" expanded="true" />
-                <element signature="e#965#966#0" expanded="true" />
-                <element signature="e#1009#1010#0" expanded="true" />
-                <element signature="e#1053#1054#0" expanded="true" />
-                <element signature="e#1086#1087#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-                <element signature="e#1189#1190#0" expanded="true" />
-                <element signature="e#2590#2591#0" expanded="true" />
-                <element signature="e#2629#2630#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3774">
-              <caret line="222" column="61" selection-start-line="222" selection-start-column="61" selection-end-line="222" selection-end-column="61" />
+            <state relative-caret-position="228">
+              <caret line="239" column="115" selection-start-line="239" selection-start-column="109" selection-end-line="239" selection-end-column="115" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/update_orders_quantities.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/mock_new_orders.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret selection-end-line="3" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Throwable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="632" column="16" selection-start-line="632" selection-start-column="16" selection-end-line="632" selection-end-column="16" />
-              <folding>
-                <element signature="e#26222#26223#0" expanded="true" />
-                <element signature="e#26265#26266#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,29 +61,38 @@
         <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
-              <caret line="377" selection-start-line="377" selection-end-line="377" />
+              <caret line="378" selection-start-line="378" selection-end-line="378" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/HashMap.java">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar!/org/junit/jupiter/api/Assertions.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="591" column="13" lean-forward="true" selection-start-line="591" selection-start-column="13" selection-end-line="591" selection-end-column="13" />
+            <state relative-caret-position="149">
+              <caret line="308" column="23" selection-start-line="308" selection-start-column="23" selection-end-line="308" selection-end-column="23" />
               <folding>
-                <element signature="e#23630#23631#0" expanded="true" />
-                <element signature="e#23684#23685#0" expanded="true" />
+                <element signature="e#9971#9972#0" expanded="true" />
+                <element signature="e#10030#10031#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/retrieve_buy_sell_orders_by_price_level.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="1256" selection-start-line="1256" selection-end-line="1256" />
+            <state relative-caret-position="51">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/mock_new_orders.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="4" selection-start-line="18" selection-end-line="18" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -177,6 +106,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ordersByPriceLevel</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -186,11 +120,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/orderbook/service/IOrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/orderbook/service/LimitOrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/orderbook/service/LimitOrderBookServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/orderbook/service/IOrderBook.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/orderbook/dao/Order.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/testClass.java" />
         <option value="$PROJECT_DIR$/src/test/resources/update_orders_quantities.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/orderbook/service/IOrderBook.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/orderbook/service/LimitOrderBookImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/retrieve_buy_sell_orders_by_price_level.txt" />
         <option value="$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java" />
       </list>
     </option>
@@ -319,7 +254,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1687269923489" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1687280282593" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -343,7 +278,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OrderBookServiceTest">
+  <component name="RunManager" selected="JUnit.OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest">
     <configuration name="OrderBookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-book" />
       <extension name="coverage">
@@ -354,22 +289,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.orderbook.orderbooktests" />
       <option name="MAIN_CLASS_NAME" value="com.orderbook.orderbooktests.OrderBookServiceTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderBookServiceTest.addOrderTest_checkOrderExistsInLookupMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-book" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.orderbook.orderbooktests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.orderbook.orderbooktests" />
-      <option name="MAIN_CLASS_NAME" value="com.orderbook.orderbooktests.OrderBookServiceTest" />
-      <option name="METHOD_NAME" value="addOrderTest_checkOrderExistsInLookupMap" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -390,7 +309,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderBookServiceTest.modifyOrdersTest_orderIsModifiedOrderLookup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderBookServiceTest.deleteOrdersTest_isOrderDeletedFromOrderPriceLookup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-book" />
       <extension name="coverage">
         <pattern>
@@ -400,13 +319,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.orderbook.orderbooktests" />
       <option name="MAIN_CLASS_NAME" value="com.orderbook.orderbooktests.OrderBookServiceTest" />
-      <option name="METHOD_NAME" value="modifyOrdersTest_orderIsModifiedOrderLookup" />
+      <option name="METHOD_NAME" value="deleteOrdersTest_isOrderDeletedFromOrderPriceLookup" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderBookServiceTest.modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-book" />
       <extension name="coverage">
         <pattern>
@@ -416,26 +335,42 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.orderbook.orderbooktests" />
       <option name="MAIN_CLASS_NAME" value="com.orderbook.orderbooktests.OrderBookServiceTest" />
-      <option name="METHOD_NAME" value="modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority" />
+      <option name="METHOD_NAME" value="retrievePriceLevelOrdersTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-book" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.orderbook.orderbooktests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.orderbook.orderbooktests" />
+      <option name="MAIN_CLASS_NAME" value="com.orderbook.orderbooktests.OrderBookServiceTest" />
+      <option name="METHOD_NAME" value="retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.OrderBookServiceTest.addOrderTest_checkOrderExistsInLookupMap" />
-      <item itemvalue="JUnit.OrderBookServiceTest.modifyOrdersTest_orderIsModifiedOrderLookup" />
-      <item itemvalue="JUnit.OrderBookServiceTest.modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority" />
       <item itemvalue="JUnit.OrderBookServiceTest" />
       <item itemvalue="JUnit.OrderBookServiceTest.addOrdersTest_OrderAddedToPriceLevelOrderList" />
+      <item itemvalue="JUnit.OrderBookServiceTest.retrievePriceLevelOrdersTest" />
+      <item itemvalue="JUnit.OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" />
+      <item itemvalue="JUnit.OrderBookServiceTest.deleteOrdersTest_isOrderDeletedFromOrderPriceLookup" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" />
+        <item itemvalue="JUnit.OrderBookServiceTest.deleteOrdersTest_isOrderDeletedFromOrderPriceLookup" />
+        <item itemvalue="JUnit.OrderBookServiceTest.retrievePriceLevelOrdersTest" />
         <item itemvalue="JUnit.OrderBookServiceTest" />
         <item itemvalue="JUnit.OrderBookServiceTest.addOrdersTest_OrderAddedToPriceLevelOrderList" />
-        <item itemvalue="JUnit.OrderBookServiceTest.modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority" />
-        <item itemvalue="JUnit.OrderBookServiceTest.modifyOrdersTest_orderIsModifiedOrderLookup" />
-        <item itemvalue="JUnit.OrderBookServiceTest.addOrderTest_checkOrderExistsInLookupMap" />
       </list>
     </recent_temporary>
   </component>
@@ -449,44 +384,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687111714634</updated>
-      <workItem from="1687111716299" duration="36630000" />
+      <workItem from="1687111716299" duration="46136000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OrderBookServiceTest_modifyOrdersTest_orderIsModifiedOrderLookup - 2023.06.20 at 15h 21m 11s.xml">
-      <configuration name="OrderBookServiceTest.modifyOrdersTest_orderIsModifiedOrderLookup" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 27m 25s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest_modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority - 2023.06.20 at 15h 26m 12s.xml">
-      <configuration name="OrderBookServiceTest.modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 29m 36s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest_modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority - 2023.06.20 at 15h 27m 00s.xml">
-      <configuration name="OrderBookServiceTest.modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 30m 44s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest_modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority - 2023.06.20 at 15h 28m 08s.xml">
-      <configuration name="OrderBookServiceTest.modifyOrdersTest_orderIsModifiedPriceLevelLookup_orderLosesPriority" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 32m 01s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest - 2023.06.20 at 15h 28m 39s.xml">
-      <configuration name="OrderBookServiceTest" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 32m 25s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest - 2023.06.20 at 15h 29m 37s.xml">
-      <configuration name="OrderBookServiceTest" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 47m 24s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest - 2023.06.20 at 15h 39m 40s.xml">
-      <configuration name="OrderBookServiceTest" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 48m 18s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest_addOrdersTest_OrderAddedToPriceLevelOrderList - 2023.06.20 at 15h 44m 04s.xml">
-      <configuration name="OrderBookServiceTest.addOrdersTest_OrderAddedToPriceLevelOrderList" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 48m 35s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest_addOrdersTest_OrderAddedToPriceLevelOrderList - 2023.06.20 at 15h 44m 46s.xml">
-      <configuration name="OrderBookServiceTest.addOrdersTest_OrderAddedToPriceLevelOrderList" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 50m 12s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderBookServiceTest_addOrdersTest_OrderAddedToPriceLevelOrderList - 2023.06.20 at 15h 47m 17s.xml">
-      <configuration name="OrderBookServiceTest.addOrdersTest_OrderAddedToPriceLevelOrderList" configurationId="JUnit" />
+    <history-entry file="OrderBookServiceTest_retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest - 2023.06.20 at 18h 52m 11s.xml">
+      <configuration name="OrderBookServiceTest.retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36630000" />
+    <option name="totallyTimeSpent" value="46136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -497,15 +432,45 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.31409395" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.31342283" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.07038123" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.28445747" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32991204" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.5175953" />
+      <window_info active="true" anchor="bottom" id="Debug" order="7" visible="true" weight="0.22434017" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.26246333" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Maven Projects" order="8" side_tool="true" weight="0.3295302" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.31409395" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.28445747" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.31085044" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.3196481" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.43108505" />
       <window_info anchor="bottom" id="Messages" order="8" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -520,7 +485,7 @@
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Maven Projects" order="8" side_tool="true" weight="0.3295302" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -533,37 +498,72 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java</url>
-          <line>80</line>
+          <line>67</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java</url>
-          <line>147</line>
+          <line>134</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java</url>
-          <line>99</line>
+          <line>86</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java</url>
+          <line>319</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java</url>
+          <line>325</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java</url>
+          <line>231</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java</url>
+          <line>198</line>
+          <properties class="com.orderbook.orderbooktests.OrderBookServiceTest" method="deleteOrdersTest_isOrderDeletedFromOrderPriceLookup">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="((HashMap)expectedOrderIDPriorityMap).entrySet().toArray()[0]" custom="java.util.HashMap" />
+        <watch expression="((LinkedHashMap)mockedOrdersByPriceLevel).entrySet().toArray()[0]" custom="java.util.LinkedHashMap" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>Assertions.assertNotEquals(expectedOrderIDPriority, actualOrderIDPriority )</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Ass</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar!/org/junit/jupiter/api/Assertions.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="1484" column="23" selection-start-line="1484" selection-start-column="23" selection-end-line="1484" selection-end-column="23" />
-          <folding>
-            <element signature="e#49226#49227#0" expanded="true" />
-            <element signature="e#49281#49282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -572,23 +572,6 @@
             <element signature="e#23630#23631#0" expanded="true" />
             <element signature="e#23684#23685#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/orderbook/service/IOrderBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="377" selection-start-line="377" selection-end-line="377" />
         </state>
       </provider>
     </entry>
@@ -617,6 +600,16 @@
           <folding>
             <element signature="e#106#107#0" expanded="true" />
             <element signature="e#142#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/orderbook/service/IOrderBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -657,25 +650,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/update_orders_quantities.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/mock_new_orders.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/orderbook/service/LimitOrderBookImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="-401">
+          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#3374#3375#0" expanded="true" />
             <element signature="e#3406#3407#0" expanded="true" />
             <element signature="e#3495#3496#0" expanded="true" />
@@ -692,10 +672,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <folding>
+            <element signature="e#10065#10066#0" expanded="true" />
+            <element signature="e#10148#10149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/update_orders_quantities.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar!/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar!/org/junit/jupiter/engine/execution/InvocationInterceptorChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="378" selection-start-line="378" selection-end-line="378" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar!/org/junit/jupiter/api/Assertions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="308" column="23" selection-start-line="308" selection-start-column="23" selection-end-line="308" selection-end-column="23" />
+          <folding>
+            <element signature="e#9971#9972#0" expanded="true" />
+            <element signature="e#10030#10031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/mock_new_orders.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="4" selection-start-line="18" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/retrieve_buy_sell_orders_by_price_level.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/orderbook/orderbooktests/OrderBookServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3774">
-          <caret line="222" column="61" selection-start-line="222" selection-start-column="61" selection-end-line="222" selection-end-column="61" />
+        <state relative-caret-position="228">
+          <caret line="239" column="115" selection-start-line="239" selection-start-column="109" selection-end-line="239" selection-end-column="115" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

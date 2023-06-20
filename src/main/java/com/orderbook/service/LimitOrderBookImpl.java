@@ -2,19 +2,18 @@ package com.orderbook.service;
 
 import com.orderbook.dao.Order;
 
-import javax.management.InvalidAttributeValueException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.*;
 
 public class LimitOrderBookImpl implements IOrderBook {
 
-    public static final String BUY= "buy";
-    public static final String SELL= "sell";
+    public static final String BUY = "buy";
+    public static final String SELL = "sell";
 
     private final Map<BigDecimal, LinkedHashMap<Long, Order>> buyOrders = new TreeMap<>();
     private final Map<BigDecimal, LinkedHashMap<Long, Order>> sellOrders = new TreeMap<>();
-    private HashMap<Long, Order> orderMap = new HashMap<>();
+    private final HashMap<Long, Order> orderMap = new HashMap<>();
 
 
 
@@ -94,6 +93,7 @@ public class LimitOrderBookImpl implements IOrderBook {
 
         Order modifiedOrder = orderMap.get(orderID);
         modifiedOrder.setQuantity(quantity);
+        modifiedOrder.setUpdateDate(LocalDateTime.now());
 
         if(modifiedOrder.getSide().equalsIgnoreCase(BUY)){
             buyOrders.get(modifiedOrder.getPrice()).remove(orderID);
@@ -109,8 +109,16 @@ public class LimitOrderBookImpl implements IOrderBook {
         return modifiedOrder;
     }
 
-    public void retriveOrders(BigDecimal orderPrice, String side) {
+    public Map<Long,Order> retriveBuySellOrdersByPriceLevel(BigDecimal orderPrice, String side) {
+       LinkedHashMap<Long, Order> priceLevelOrders = null;
 
+       if(side.equalsIgnoreCase(BUY)){
+           priceLevelOrders =  buyOrders.get(orderPrice);
+       }else{
+           priceLevelOrders = sellOrders.get(orderPrice);
+       }
+
+       return priceLevelOrders;
     }
 
     public Map<BigDecimal, LinkedHashMap<Long, Order>> getAllBuyOrdersByPriceLevel() {

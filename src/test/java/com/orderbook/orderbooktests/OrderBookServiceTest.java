@@ -8,8 +8,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class OrderBookServiceTest {
@@ -18,27 +18,14 @@ public class OrderBookServiceTest {
     private LimitOrderBookImpl orderService = new LimitOrderBookImpl();
     private static List<Order> orders = new ArrayList<>();
     private static List<Integer> newQuantities = new ArrayList<>();
+    private static Map<BigDecimal, String> ordersByPriceLevel = new TreeMap<>();
+    private static Map<Long, Order>  mockedOrdersByPriceLevel = new LinkedHashMap<>();
 
-
-
-
-    public static Order getMockedOrderObject(){
-        Order order_1 = new Order.OrderBuilder()
-                .setId(12345l)
-                .setPrice(new BigDecimal(1000))
-                .setQuantity(50)
-                .setSide("sell")
-                .setCreateDate(LocalDateTime.now())
-                .build();
-
-
-        return order_1;
-    }
 
     @Test
     public void generateUniqueIdentifierTest(){
     }
-    //Test case to test the Add operation for buy orders
+
     @Test
     public void addOrderTest_checkOrderExistsInLookupMap(){
 
@@ -235,13 +222,45 @@ public class OrderBookServiceTest {
         }, "The order id does not exist" );
     }
 
+    //Test case to test the retrieve order for specific price and side
 
+    @Test
+    public void retrievePriceLevelOrdersTest_checkPriorityOfOrdersTest(){
+        Iterator iter = ordersByPriceLevel.keySet().iterator();
+
+        while(iter.hasNext()){
+            BigDecimal priceLevel = new BigDecimal(iter.next().toString());
+            Map<Long, Order> orderPriority = orderService
+                    .retriveBuySellOrdersByPriceLevel(priceLevel, ordersByPriceLevel.get(priceLevel));
+            Iterator<Long> actualOrderIDPriorityIter = orderPriority.keySet().iterator();
+
+            Map<Long, Order> expectedOrderIDPriorityMap = mockedOrdersByPriceLevel.entrySet()
+                    .stream()
+                    .filter(x-> x.getValue().getPrice().equals(priceLevel))
+                    .collect(LinkedHashMap::new,(map, item) -> map.put(item.getKey(), item.getValue()), Map::putAll);
+
+            Iterator<Long> expectedOrderIDPriorityIter = expectedOrderIDPriorityMap.keySet().iterator();
+
+
+            while(actualOrderIDPriorityIter.hasNext()){
+                 long actualOrderIDPriority = actualOrderIDPriorityIter.next();
+                 long expectedOrderIDPriority = expectedOrderIDPriorityIter.next();
+
+                Assertions.assertEquals(expectedOrderIDPriority, actualOrderIDPriority );
+                System.out.print(orderPriority.get(actualOrderIDPriority).toString() + ",");
+            }
+            System.out.println("\n");
+
+        }
+
+    }
 
 
     @BeforeAll
     public static void mockNewOrders(){
         String newOrdersfile ="src/test/resources/mock_new_orders.txt";
         String updateOrderQuantityFile = "src/test/resources/update_orders_quantities.txt";
+        String retrievePriceLevelBuySellOrdersFile = "src/test/resources/retrieve_buy_sell_orders_by_price_level.txt";
 
         BufferedReader reader = null;
         try {
@@ -263,6 +282,13 @@ public class OrderBookServiceTest {
                 newQuantities.add(Integer.parseInt(currentLine));
             }
 
+            reader = new BufferedReader(new FileReader(retrievePriceLevelBuySellOrdersFile));
+
+            while((currentLine = reader.readLine()) != null){
+                String [] parts = currentLine.split(",");
+                ordersByPriceLevel.put(new BigDecimal(parts[0]), parts[1]);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -276,12 +302,6 @@ public class OrderBookServiceTest {
 
     }
 
-    /*@BeforeAll
-    public static void printMockedOrders(){
-        //orders.forEach((order) -> System.out.println(order.toString()));
-        newQuantities.forEach((q) -> System.out.println(q));
-    }*/
-
     @BeforeEach
     public  void addMockedOrders(){
         if(!orderService.getAllOrders().isEmpty()){
@@ -291,9 +311,20 @@ public class OrderBookServiceTest {
         }
         for(Order order : orders){
             orderService.addOrder(order);
-
         }
     }
+
+    @BeforeEach
+    public void mapOrdersByPriority(){
+
+        for(Order order : orders){
+            if(ordersByPriceLevel.containsKey(order.getPrice())
+                    && order.getSide().equalsIgnoreCase(ordersByPriceLevel.get(order.getPrice()))){
+                mockedOrdersByPriceLevel.put(order.getId(), order);
+            }
+        }
+    }
+
 
     public static int getListSizeforUpdateTest(){
         int length;
@@ -307,12 +338,6 @@ public class OrderBookServiceTest {
 
 
 
-
-    //Test case to test the update operation for buy orders
-
-    //Test case to test the update operation for sell orders
-
-    //Test case to test the retrieve order for specific price and side
 
 
 
