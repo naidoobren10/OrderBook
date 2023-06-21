@@ -5,11 +5,11 @@ import com.orderbook.dao.Order;
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
+
 
 public interface IOrderBook {
 
-    public void addOrder(Order order);
+    public boolean addOrder(Order order);
 
     public Order deleteOrder(long orderID);
 
@@ -17,4 +17,11 @@ public interface IOrderBook {
 
     public Map<Long, Order> retriveBuySellOrdersByPriceLevel(BigDecimal orderPrice, String side);
 
+    public <T>T generateUniqueOrderIdentifier();
+
+    public Map<BigDecimal, LinkedHashMap<Long, Order>> getAllBuyOrdersByPriceLevel();
+
+    public Map<BigDecimal, LinkedHashMap<Long, Order>> getAllSellOrdersByPriceLevel();
+
+    public Map<?, Order> getAllOrders();
 }

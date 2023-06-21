@@ -17,7 +17,7 @@ public class LimitOrderBookImpl implements IOrderBook {
 
 
 
-    public long generateUniqueOrderIdentifier(){
+    public Long generateUniqueOrderIdentifier(){
 
        long orderID = System.currentTimeMillis();
 
@@ -29,24 +29,23 @@ public class LimitOrderBookImpl implements IOrderBook {
 
     }
 
-    public void addOrder(Order order) {
+    public boolean addOrder(Order order) {
 
-        if(order == null){
-            throw new NullPointerException("Invalid Order, Order cannot be null");
+        if(order != null) {
+            order.setId(generateUniqueOrderIdentifier());
+            order.setCreateDate(LocalDateTime.now());
+            orderMap.put(order.getId(), order);
+
+
+            if (order.getSide().equalsIgnoreCase(LimitOrderBookImpl.BUY)) {
+                addOrdersByPriceLevel(order, buyOrders);
+            } else {
+                addOrdersByPriceLevel(order, sellOrders);
+            }
+
+            return true;
         }
-
-        order.setId(generateUniqueOrderIdentifier());
-        order.setCreateDate(LocalDateTime.now());
-        orderMap.put(order.getId(), order);
-
-
-        if(order.getSide().equalsIgnoreCase(LimitOrderBookImpl.BUY)){
-            addOrdersByPriceLevel(order,buyOrders);
-        }else{
-            addOrdersByPriceLevel(order,sellOrders);
-        }
-
-
+        return false;
     }
 
     @Override
@@ -129,20 +128,11 @@ public class LimitOrderBookImpl implements IOrderBook {
         return sellOrders;
     }
 
-    public HashMap<Long, Order> getAllOrders(){
+    public Map<Long, Order> getAllOrders(){
         return orderMap;
     }
 
-    public int getOrdersSize(){
-        return orderMap.size();
-    }
 
-    public int getSellOrdersByPriceLevelSize(){
-        return sellOrders.size();
-    }
 
-    public int getBuyOrdersByPriceLevelSize() {
-        return buyOrders.size();
-    }
 
  }

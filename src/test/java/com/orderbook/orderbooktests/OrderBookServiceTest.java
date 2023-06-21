@@ -1,6 +1,7 @@
 package com.orderbook.orderbooktests;
 
 import com.orderbook.dao.Order;
+import com.orderbook.service.IOrderBook;
 import com.orderbook.service.LimitOrderBookImpl;
 import org.junit.jupiter.api.*;
 
@@ -14,7 +15,7 @@ import java.util.*;
 public class OrderBookServiceTest {
 
 
-    private LimitOrderBookImpl orderService = new LimitOrderBookImpl();
+    private IOrderBook orderService = new LimitOrderBookImpl();
     private static List<Order> orders = new ArrayList<>();
     private static List<Integer> newQuantities = new ArrayList<>();
     private static Map<BigDecimal, String> ordersByPriceLevel = new TreeMap<>();
@@ -23,6 +24,19 @@ public class OrderBookServiceTest {
 
     @Test
     public void generateUniqueIdentifierTest(){
+
+        Assertions.assertInstanceOf(Long.class, orderService.generateUniqueOrderIdentifier());
+
+        List<Long> uniqueIdentifiersList = new ArrayList<>();
+        for(int i =0 ; i<1000; i++){
+            uniqueIdentifiersList.add(orderService.generateUniqueOrderIdentifier());
+        }
+        Set<Long> uniqueIdentifiersSet = new HashSet<>(uniqueIdentifiersList);
+
+        Assertions.assertTrue(uniqueIdentifiersSet.size() < uniqueIdentifiersList.size());
+
+
+
     }
 
     @Test
@@ -30,7 +44,7 @@ public class OrderBookServiceTest {
 
         for(Order order : orders){
             Order expectedOrder = order;
-            HashMap<Long, Order> actualOrders = orderService.getAllOrders();
+            Map<?, Order> actualOrders = orderService.getAllOrders();
 
             Assertions.assertTrue(actualOrders.containsKey(expectedOrder.getId()));
 
@@ -66,7 +80,7 @@ public class OrderBookServiceTest {
 
         for(Order order : orders){
             Order expectedOrder = order;
-            HashMap<Long, Order> orders = orderService.getAllOrders();
+            Map<?, Order> orders = orderService.getAllOrders();
             Order actualOrder = orders.get(expectedOrder.getId());
 
             //check if the same object exists in the orderMap
@@ -119,10 +133,9 @@ public class OrderBookServiceTest {
                 e.printStackTrace();
             }
 
-            //Assertions.assertNotEquals(expectedOrder.getQuantity(), modifiedOrder.getQuantity());
-            Assertions.assertEquals(modifiedOrder.getQuantity(), newQuantities.get(i));
+            Assertions.assertEquals( newQuantities.get(i), modifiedOrder.getQuantity());
 
-            Assertions.assertEquals(orderService.getAllOrders().get(expectedOrder.getId()).getQuantity(), newQuantities.get(i));
+            Assertions.assertEquals(newQuantities.get(i), orderService.getAllOrders().get(expectedOrder.getId()).getQuantity());
 
 
         }
@@ -301,6 +314,7 @@ public class OrderBookServiceTest {
 
     }
 
+    @Test
     @BeforeEach
     public  void addMockedOrders(){
         if(!orderService.getAllOrders().isEmpty()){
@@ -309,7 +323,8 @@ public class OrderBookServiceTest {
             }
         }
         for(Order order : orders){
-            orderService.addOrder(order);
+            boolean orderAdded = orderService.addOrder(order);
+            Assertions.assertTrue(orderAdded);
         }
     }
 
